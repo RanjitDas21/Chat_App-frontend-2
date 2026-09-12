@@ -4,7 +4,7 @@ function ActiveTabSwitch() {
   const { activeTab, setActiveTab } = useChatStore();
 
   return (
-    <div className="flex gap-1 bg-zinc-100 p-1 rounded-lg flex-shrink-0">
+    <div className="tabs tabs-boxed bg-transparent p-2 m-2">
       <button
         onClick={() => setActiveTab("chats")}
         className={`px-3 sm:px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${

@@ -19,49 +19,61 @@ function ChatPage() {
       }
     }, []);
 
-  return (
+return (
 
-    <div className="relative w-full max-w-6xl h-dvh md:h-[800px] flex flex-col
-      bg-white md:rounded-2xl md:border md:border-zinc-200 md:shadow-xl md:shadow-zinc-200/60 overflow-hidden">
+  <div className="relative p-6 w-full max-w-6xl h-dvh md:h-[800px] flex flex-col
+    bg-white md:rounded-2xl md:border md:border-zinc-200 md:shadow-xl md:shadow-zinc-200/60 md:flex-row overflow-hidden">
 
-      {/* TOP BAR — profile + tab switch span the full width */}
-      <div
-        className={`
-          flex items-center justify-between gap-4
-          border-b border-zinc-200 px-4 sm:px-6 py-3
-          ${selectedUser ? "hidden md:flex" : "flex"}
-        `}
-      >
+    {/* LEFT SIDE — profile + tab switch + list */}
+    <div
+      className={`
+        w-full md:w-80
+        flex flex-col
+        border-r border-zinc-200
+        min-h-0
+        ${selectedUser ? "hidden md:flex" : "flex"}
+      `}
+    >
+
+      {/* PROFILE HEADER */}
+      <div className="p-5">
         <ProfileHeader />
-        <ActiveTabSwitch />
       </div>
 
-      {/* BODY — list pane + conversation pane, side by side */}
-      <div className="flex flex-1 min-h-0">
-        {/* LIST PANE */}
-        <div
-          className={`
-            w-full md:w-80 flex-shrink-0
-            border-r border-zinc-200
-            overflow-y-auto p-3 space-y-1.5 min-h-0
-            ${selectedUser ? "hidden md:block" : "block"}
-          `}
-        >
-          {activeTab === "chats" ? <ChatList /> : <ContactList />}
-        </div>
+      {/* ACTIVE TAB SWITCH */}
+      <ActiveTabSwitch />
 
-        {/* CONVERSATION PANE */}
-        <div
-          className={`
-            flex-1 flex-col min-h-0
-            bg-zinc-50
-            ${!selectedUser ? "hidden md:flex" : "flex"}
-          `}
-        >
-          {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
-        </div>
+      {/* LIST PANE */}
+      <div
+        className="
+          flex-1
+          overflow-y-auto
+          p-3
+          space-y-2
+          min-h-0
+        "
+      >
+        {activeTab === "chats" ? <ChatList /> : <ContactList />}
       </div>
+
     </div>
-  );
+
+    {/* RIGHT SIDE — CONVERSATION PANE */}
+    <div
+      className={`
+        flex-1 flex-col min-h-0
+        bg-zinc-50
+        ${!selectedUser ? "hidden md:flex" : "flex"}
+      `}
+    >
+
+      {selectedUser ? <ChatContainer /> : <NoConversationPlaceholder />}
+
+    </div>
+
+  </div>
+
+);
+
 }
 export default ChatPage;

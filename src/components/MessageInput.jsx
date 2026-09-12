@@ -71,7 +71,7 @@ function MessageInput() {
 
       <form
         onSubmit={handleSendMessage}
-        className="max-w-3xl mx-auto flex items-center gap-2 sm:gap-3"
+        className="max-w-3xl mx-auto flex items-center gap-2 sm:gap-4"
       >
         <input
           type="text"
@@ -80,9 +80,8 @@ function MessageInput() {
             setText(e.target.value);
             isSoundEnabled && playRandomKeyStrokeSound();
           }}
-          className="flex-1 min-w-0 bg-zinc-100 border border-transparent rounded-xl py-2.5 px-4 text-sm sm:text-base
-          text-zinc-900 placeholder-zinc-400 transition-colors
-          focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:bg-white focus:border-zinc-200"
+          className="flex-1 min-w-0 bg-zinc-100 border border-transparent rounded-xl py-2 px-3 text-sm sm:text-base
+          text-zinc-900 placeholder-zinc-400 transition-colors focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:bg-white focus:border-zinc-200"
           placeholder="Type your message..."
         />
 
@@ -101,16 +100,16 @@ function MessageInput() {
           className={`flex-shrink-0 w-10 h-10 sm:w-11 sm:h-11 flex items-center justify-center rounded-xl bg-zinc-100 transition-colors
           ${imagePreview ? "text-accent-600" : "text-zinc-500 hover:text-zinc-800 hover:bg-zinc-200"}`}
         >
-          <ImageIcon className="w-5 h-5 sm:w-[22px] sm:h-[22px]" />
+          <ImageIcon className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
 
         {/* Send Button */}
         <button
           type="submit"
           disabled={!text.trim() && !imagePreview}
-          className="flex-shrink-0 w-10 h-10 sm:w-auto sm:px-5 sm:py-2.5 flex items-center justify-center rounded-xl bg-accent-600 text-white hover:bg-accent-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+          className="flex-shrink-0 w-10 h-10 sm:w-auto sm:px-4 sm:py-2 flex items-center justify-center rounded-xl bg-accent-600 text-white hover:bg-accent-700 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          <SendIcon className="w-5 h-5 sm:w-[18px] sm:h-[18px]" />
+          <SendIcon className="w-5 h-5 sm:w-6 sm:h-6" />
         </button>
       </form>
     </div>

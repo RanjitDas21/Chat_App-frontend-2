@@ -22,16 +22,16 @@ function ChatHeader() {
 
   return (
     <div
-      className="flex justify-between items-center bg-cyan-800/100 border-b border-cyan-700/100 max-h-[84px] px-6 flex-1"
+      className="flex justify-between items-center bg-accent-600 border-b border-accent-600 max-h-[84px] px-6 flex-1"
     >
       <div className="flex items-center space-x-3 min-w-0">
         <div className={`avatar ${isOnline ? "online" : "offline"}`}>
-          <div className="w-11 rounded-full ring-1 ring-zinc-200">
+          <div className="w-12 rounded-full ring-1 ring-zinc-200">
             <img src={selectedUser.profilePic || "/avatar.png"} alt={selectedUser.fullName} />
           </div>
         </div>
 
-        <div className="min-w-0">
+        <div>
           <h3 className="text-zinc-100 font-semibold truncate">{selectedUser.fullName}</h3>
           <p className={`text-sm ${isOnline ? "text-zinc-100" : "text-zinc-100"}`}>
             {isOnline ? "Online" : "Offline"}

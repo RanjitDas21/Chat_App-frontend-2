@@ -37,29 +37,27 @@ function ChatContainer() {
       <ChatHeader />
       <div className="flex-1 px-4 sm:px-6 overflow-y-auto py-6 sm:py-8 min-h-0">
         {messages.length > 0 && !isMessagesLoading ? (
-          <div className="max-w-3xl mx-auto space-y-4">
+          <div className="max-w-3xl mx-auto space-y-6">
             {messages.map((msg) => (
               <div
                 key={msg._id}
                 className={`chat ${msg.senderId === authUser._id ? "chat-end" : "chat-start"}`}
               >
                 <div
-                  className={`chat-bubble relative shadow-sm ${
+                  className={`chat-bubble relative ${
                     msg.senderId === authUser._id
                       ? "bg-accent-600 text-white"
-                      : "bg-white text-zinc-800 border border-zinc-200"
+                      : "bg-slate-800 text-slate-200"
                   }`}
                 >
                   {msg.image && (
                     <img src={msg.image} alt="Shared" className="rounded-lg h-48 object-cover" />
                   )}
-                  {msg.text && <p className="mt-1 leading-relaxed">{msg.text}</p>}
-                  <p
-                    className={`text-[11px] mt-1 ${
-                      msg.senderId === authUser._id ? "text-white/70" : "text-zinc-400"
-                    }`}
-                  >
-                    {new Date(msg.createdAt).toLocaleDateString()}{" "}
+                  {msg.text && <p className="mt-2">{msg.text}</p>}
+                  <p className="text-xs mt-1 opacity-75">
+                    {new Date(msg.createdAt).toLocaleDateString()}
+                  </p>
+                  <p className="text-xs opacity-75">
                     {new Date(msg.createdAt).toLocaleTimeString([], {
                       hour: "2-digit",
                       minute: "2-digit",
