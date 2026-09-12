@@ -1,0 +1,95 @@
+@import "tailwindcss";
+@plugin "daisyui" {
+  themes: light --default;
+}
+
+/*
+  Design tokens
+  Cool, neutral (zinc) surface palette + a single restrained
+  steel-blue accent. White is the primary background throughout.
+*/
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --color-accent-50: #eff3f8;
+  --color-accent-100: #dde6f1;
+  --color-accent-200: #b8cbe3;
+  --color-accent-300: #8fabd0;
+  --color-accent-400: #6690b4;
+  --color-accent-500: #4a749b;
+  --color-accent-600: #3a5c7d;
+  --color-accent-700: #2f4a65;
+  --color-accent-800: #263c52;
+  --color-accent-900: #1e2f40;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: #1c1c1e;
+  background-color: #ffffff;
+}
+
+/* Comfortable, understated scrollbars */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #d4d4d8 transparent;
+}
+*::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+*::-webkit-scrollbar-thumb {
+  background-color: #d4d4d8;
+  border-radius: 9999px;
+}
+*::-webkit-scrollbar-thumb:hover {
+  background-color: #a1a1aa;
+}
+
+/* Visible, tasteful keyboard focus ring everywhere */
+:focus-visible {
+  outline: 2px solid var(--color-accent-400);
+  outline-offset: 2px;
+}
+
+/* ---------- Shared auth form primitives ---------- */
+
+.input {
+  @apply w-full bg-white border border-zinc-300 rounded-xl py-2.5 pl-11 pr-4
+  text-[15px] text-zinc-900 placeholder-zinc-400 shadow-sm
+  transition-colors duration-150
+  focus:outline-none focus:ring-2 focus:ring-accent-400/40 focus:border-accent-500;
+}
+
+.auth-input-icon {
+  @apply absolute left-3.5 top-1/2 -translate-y-1/2 text-zinc-400 size-5 pointer-events-none;
+}
+
+.auth-input-label {
+  @apply block text-sm font-medium text-zinc-700 mb-1.5;
+}
+
+.auth-badge {
+  @apply inline-flex items-center px-3 py-1 text-xs font-medium rounded-full
+  bg-accent-50 text-accent-700 border border-accent-100;
+}
+
+.auth-btn {
+  @apply w-full bg-accent-600 text-white rounded-xl py-2.5 font-medium
+  shadow-sm transition-colors duration-150
+  hover:bg-accent-700 focus:outline-none focus:ring-2 focus:ring-accent-400/40
+  disabled:opacity-60 disabled:cursor-not-allowed;
+}
+
+.auth-link {
+  @apply px-4 py-2 inline-block bg-zinc-100 rounded-lg text-zinc-600
+  hover:bg-zinc-200 hover:text-zinc-900 text-sm font-medium transition-colors;
+}
