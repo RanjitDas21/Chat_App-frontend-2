@@ -21,24 +21,20 @@ function ChatPage() {
 
 return (
 
-  <div className="relative p-6 w-full max-w-6xl h-dvh md:h-[800px] flex flex-col
-    bg-white md:rounded-2xl md:border md:border-zinc-200 md:shadow-xl md:shadow-zinc-200/60 md:flex-row overflow-hidden">
+  <div className="relative p-6 w-full max-w-6xl h-dvh md:h-[800px] flex flex-col bg-slate-200 md:rounded-2xl md:border md:border-zinc-200 md:shadow-xl md:flex-row">
 
     {/* LEFT SIDE — profile + tab switch + list */}
     <div
       className={`
         w-full md:w-80
-        flex flex-col
-        border-r border-zinc-200
+        flex flex-col border-zinc-200
         min-h-0
         ${selectedUser ? "hidden md:flex" : "flex"}
       `}
     >
 
       {/* PROFILE HEADER */}
-      <div className="p-5">
         <ProfileHeader />
-      </div>
 
       {/* ACTIVE TAB SWITCH */}
       <ActiveTabSwitch />

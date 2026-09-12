@@ -9,7 +9,7 @@ function ActiveTabSwitch() {
         onClick={() => setActiveTab("chats")}
         className={`px-3 sm:px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
           activeTab === "chats"
-            ? "bg-white text-zinc-900 shadow-sm"
+            ? "bg-accent-500 text-zinc-900 shadow-sm"
             : "text-zinc-500 hover:text-zinc-700"
         }`}
       >
@@ -20,7 +20,7 @@ function ActiveTabSwitch() {
         onClick={() => setActiveTab("contacts")}
         className={`px-3 sm:px-4 py-1.5 text-sm font-medium rounded-md transition-colors ${
           activeTab === "contacts"
-            ? "bg-white text-zinc-900 shadow-sm"
+            ? "bg-accent-500 text-zinc-900 shadow-sm"
             : "text-zinc-500 hover:text-zinc-700"
         }`}
       >

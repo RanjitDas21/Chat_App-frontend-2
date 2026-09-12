@@ -30,11 +30,13 @@ function ProfileHeader() {
 
 
   return (
-    <div className="flex items-center gap-3 min-w-0">
+    <div className="p-6 border-b border-slate-700/50">
+      <div className="flex items-center justify-between">
+        <div className="flex items-center gap-3">
       {/* AVATAR */}
       <div className="avatar online">
         <button
-          className="size-11 rounded-full overflow-hidden relative group ring-2 ring-white outline outline-1 outline-zinc-200"
+          className="size-14 rounded-full overflow-hidden relative group"
           onClick={() => fileInputRef.current.click()}
         >
           <img
@@ -43,7 +45,7 @@ function ProfileHeader() {
             className="size-full object-cover"
           />
           <div className="absolute inset-0 bg-zinc-900/50 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-            <span className="text-white text-[11px] font-medium">Change</span>
+            <span className="text-white font-medium">Change</span>
           </div>
         </button>
 
@@ -57,7 +59,7 @@ function ProfileHeader() {
       </div>
 
       {/* USERNAME & ONLINE TEXT */}
-      <div className="min-w-0 hidden sm:block">
+      <div>
         <h3 className="text-zinc-900 font-semibold text-[15px] max-w-[170px] truncate">
           {authUser.fullName}
         </h3>
@@ -93,6 +95,8 @@ function ProfileHeader() {
         >
           <LogOutIcon className="size-[18px] cursor-pointer" />
         </button>
+      </div>
+    </div>
       </div>
     </div>
   );
