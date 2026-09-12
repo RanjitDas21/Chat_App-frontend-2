@@ -32,8 +32,8 @@ function ChatHeader() {
         </div>
 
         <div className="min-w-0">
-          <h3 className="text-zinc-900 font-semibold truncate">{selectedUser.fullName}</h3>
-          <p className={`text-sm ${isOnline ? "text-accent-600" : "text-zinc-400"}`}>
+          <h3 className="text-zinc-100 font-semibold truncate">{selectedUser.fullName}</h3>
+          <p className={`text-sm ${isOnline ? "text-zinc-100" : "text-zinc-100"}`}>
             {isOnline ? "Online" : "Offline"}
           </p>
         </div>
